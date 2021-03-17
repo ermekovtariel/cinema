@@ -1,0 +1,35 @@
+@import './colors.scss';
+
+.App{
+    background-color: $dark;
+    .title{
+        background: $black;
+        color: $white;
+        height: 1em;
+        text-align: left;
+        font-size: xx-large;
+        padding: 10px 0;
+        text-decoration:none!important;
+        font-family: cursive;
+        a{
+            padding-left: 21px;
+        }
+        .search-bar{
+            float: left;
+            width: -webkit-fill-available;
+            background:  $black;
+            height: 2em;
+            text-align: left;
+            font-family: cursive;
+        }
+    }
+    .degree{
+        color: $green;
+        font-size: 17em;
+        font-family: cursive;
+    }
+    .content{
+        color: $green;
+    }
+
+}

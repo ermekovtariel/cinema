@@ -1,27 +1,22 @@
 import React from 'react'
-import axios from "axios";
-function App() {
+import { Degree, Header } from './components';
+import { Esterday as Yesterday, Main, Tomorrow } from './pages';
+import './styles/main.scss'
 
-  
-  const options = {
-    method: 'GET',
-    url: 'https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup/',
-    params: {term: 'bojack', country: 'uk'},
-    headers: {
-      'x-rapidapi-key': '8c71aa6288mshf8d721368e32656p1f7f47jsnffd8e8f430e1',
-      'x-rapidapi-host': 'utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com'
-    }
-  };
-  
-  axios.request(options).then(function (response) {
-    console.log(response.data);
-  }).catch(function (error) {
-    console.error(error);
-  });
+import { Route } from "react-router-dom";
+
+function App() {
   return (
     <div className="App">
-      123
-
+      <Header />
+      <Degree />
+      <div className="content">
+        <Route path='/a' component={Main} exact />
+        <Route path='/Esterday' component={Yesterday} exact />
+        <Route path='/Tomorrow' component={Tomorrow} exact />
+      </div>
+      <div className='categories'>
+      </div>
     </div>
   );
 }
